@@ -274,6 +274,7 @@ services:
       - "9999:8888"
     volumes:
       - ./notebooks:/home/jovyan/work
+<<<<<<< HEAD
 ##################
   dremio:
     hostname: "dremio"
@@ -284,6 +285,9 @@ services:
       - "45678:45678"
     volumes:
       - ./dremio:/opt/dremio/data    
+=======
+
+>>>>>>> b75d3869efb4b4f6d9ba24a0d1131f16ac06b7d7
 #################################################
 volumes:
   minio-data:
