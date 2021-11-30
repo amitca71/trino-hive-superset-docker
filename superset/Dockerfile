@@ -5,5 +5,6 @@ USER root
 # if you prefer Postgres, you may want to use `psycopg2-binary` instead
 RUN pip install mysqlclient
 RUN pip install sqlalchemy-trino
+RUN pip install dremio-client
 # Switching back to using the `superset` user
 USER superset
