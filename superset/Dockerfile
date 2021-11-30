@@ -6,9 +6,10 @@ USER root
 RUN pip install --upgrade pip
 RUN pip install mysqlclient
 RUN pip install sqlalchemy-trino
-RUN wget https://download.dremio.com/odbc-driver/dremio-odbc-LATEST.x86_64.rpm
-RUN apt update
+RUN apt update -y
+RUN apt install alien -y
 RUN apt install -y unixodbc unixodbc-dev
 RUN pip install sqlalchemy_dremio
+RUN wget https://download.dremio.com/odbc-driver/dremio-odbc-LATEST.x86_64.rpm && alien -i --scripts dremio-odbc-LATEST.x86_64.rpm
 # Switching back to using the `superset` user
 USER superset
