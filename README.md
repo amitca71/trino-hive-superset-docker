@@ -19,6 +19,7 @@
 5. Checkout the service endpoints:
 
 Trino: `http://localhost:8080/ui/` (username can be anything) <br>
+Dremio: `http://localhost:9047`
 Minio: `http://localhost:9001/` (username: `minio_access_key`, password: `minio_secret_key`)<br>
 Superset: `http://localhost:8088/` (username: `admin`, password: `admin`)<br>
 kafka: `http://localhost:9021/ ` <br>
