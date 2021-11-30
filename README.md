@@ -1,15 +1,14 @@
 # Cloud-native Lakehouse:  
-## kafka + spark + Deltalake + Trino (prestosql) + Hive + Minio + Superset. 
+## kafka + spark + Deltalake + (Trino (prestosql) + Hive + Minio)/dremio + Superset. 
 ### Technologies:
 #### apache kafka
 #### apache spark
 #### apache deltalake
-#### Query Engine is `Trino (PrestoSQL)`
+#### Query Engine is `Trino (PrestoSQL)`\Dremio
 #### Metadata Store is `Apache Hive`
 #### Object Storage is `Minio (S3 compatable)`
 #### Data Viz is `Apache Superset`
-
-![image](https://user-images.githubusercontent.com/5821916/143058563-97afbd4f-651d-4290-b2e2-ed3dfb38d4ae.png)
+![image](https://user-images.githubusercontent.com/5821916/144006020-8bfc96ca-5475-4be1-a7db-355622ad0404.png)
 
 
 ## Get things running
@@ -48,6 +47,16 @@ curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json"
 2. Click the `+ database` button
 3. For `Select a database to connect` choose `trino`
 4. In `SQLALCHEMY URI` put `trino://hive@trino-coordinator:8080/hive` 
+## Drimio  (works only with real S3- for me
+1. http://localhost:9047/ 
+2. create user and pass
+3. connect to S3 bucket
+4. set type as deltalake 
+## Connect to Drinio in Superset (Drimio doesnt require hive, but add dificulties to work with minio. work only with real S3:
+1. Go to `data` dropdown and click `databases`
+2. Click the `+ database` button
+3. For `Select a database to connect` choose `Drimio`
+4. In `SQLALCHEMY URI` put `dremio://user:pwd@host:31010/` 
 ### sqllab
 1. choose: `trino...
 
